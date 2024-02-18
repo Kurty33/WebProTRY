@@ -1,0 +1,72 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.leaderboard {
+  width: 800px;
+  margin: 70px auto;
+  height: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 55px 0 rgb(255, 255, 255), inset 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  position: relative; /* Set the position to relative for absolute positioning of the button */
+}
+
+.leaderboard h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.points {
+  color: #555;
+}
+
+.back-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none;
+}
+
+button {
+  background-color: #61a0d4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #d43b66; /* Remove the extra semicolon here */
+}

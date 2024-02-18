@@ -1,0 +1,294 @@
+
+* {
+    color: white;
+    font-family: "Helvetica Neue",;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    overflow: hidden;
+
+  }
+
+@keyframes color {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon {
+    background: transparent;
+    animation: border 3s linear infinite;
+    border: 2px solid #000;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 350px;
+    width: 350px;
+    margin: 10px auto;
+    border: 2px solid #000;
+    position: relative;
+    overflow: hidden;
+    animation: border 3s linear infinite;
+}
+
+@keyframes border {
+    0% {
+        border-color: #d98208;
+        box-shadow: 0 0 10px rgba(209, 28, 85, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        border-color: #a12eff;
+        box-shadow: 0 0 20px rgba(255, 46, 99, 0.8), 0 0 10px rgba(8, 217, 214, 0.5);
+    }
+    100% {
+        border-color: #d90808;
+        box-shadow: 0 0 10px rgba(217, 8, 18, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.box {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 2px solid #b72c2c;
+}
+
+.box:hover {
+    background-color: #FF2E63;
+}
+
+.turn-container {
+    width: 170px;
+    height: 80px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.turn-container h3 {
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.turn-container .turn-box {
+    border: 3px solid #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.turn-container .turn-box:nth-child(even) {
+    border-right: none;
+}
+
+.bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85px;
+    height: 30px;
+    background-color: #FF2E63;
+    z-index: -1;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.scoreboard span {
+    margin-right: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#player-x-score,
+#player-o-score {
+    display: flex;
+    align-items: center;
+}
+
+#player-x-count,
+#player-o-count {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    background-color: #FF2E63;
+    color: #fff;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.opponent-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+  
+.opponent-toggle button {
+    padding: 10px 20px;
+    width: 170px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.opponent-toggle button:nth-child(odd) {
+    border-right: none;
+}
+  
+.opponent-toggle button.active {
+    background-color: #2a33e0;  
+    color: #fff;
+}
+.opponent-toggle button {
+    background-color: #bfc5a4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.opponent-toggle button:not(.active):hover {
+    background-color: #08D9D6;
+    color: #000;
+}
+
+#play-again {
+    background-color: #FF2E63;
+    padding: 10px 25px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    margin-top: 0;
+}
+
+#play-again:hover {
+    background-color: #08D9D6;
+    color: #000;
+}
+
+.leaderboard {
+  width: 800px;
+  margin: 70px auto;
+  height: 600px;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 55px 0 rgb(255, 255, 255), inset 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  position: relative; /* Set the position to relative for absolute positioning of the button */
+}
+
+.leaderboard h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.points {
+  color: #555;
+}
+
+.back-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none;
+}
+
+button {
+  background-color: #61a0d4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #d43b66; /* Remove the extra semicolon here */
+}
